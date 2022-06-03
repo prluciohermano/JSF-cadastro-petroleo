@@ -37,7 +37,6 @@ public class Petroleo implements Serializable {
 	private String razaoSocial;
 
 	@NotEmpty
-	@CNPJ
 	@Column(nullable = false, length = 18)
 	private String cnpj;
 	
@@ -45,7 +44,7 @@ public class Petroleo implements Serializable {
 	@Column(name="marca_revenda", nullable = false, length = 18)
 	private String marca;
 	
-	@Digits(integer = 3, fraction = 2, message="Apenas 2 centenas e 2 casas apï¿½s o ponto.")
+	@Digits(integer = 3, fraction = 2, message="Apenas 2 centenas e 2 casas após o ponto.")
 	private BigDecimal preco;
 
 	@NotNull

@@ -5,31 +5,58 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<meta charset="UTF-8"/>
+	<f:facet name="first">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</f:facet>
+	<h:outputStylesheet library="css" name="custom.css" />
+	<h:outputStylesheet library="css" name="layout.css" />
+	<h:outputStylesheet library="css" name="components.css" />
 	<h:outputStylesheet library="css" name="estilo.css" />
+	
+	<h:outputScript target="body" library="primefaces" name="jquery/jquery.js" />
+	<h:outputScript target="body" library="js" name="app.js" />
 </h:head>
+
 <h:body>
-	<header>
+	<header class="aw-topbar">
 		<h:graphicImage library="images" name="dsw_logo.png" />
+		</header>
+		<header>
+		  
+		<h:graphicImage library="images" name="dsw_logo.png" />
+		
 	</header>
 	
-	<div id="conteudo">
-		<ui:insert name="corpo" />
-	</div>
+	<aside class="aw-sidebar  js-sidebar">
+		<ui:include src="menu.xhtml" />
+	</aside>
 	
+	<section class="aw-content  js-content">
+		<ui:insert name="content" />
+	</section>
+<!--  -->
+	<aside class="aw-sidebar  js-sidebar">
+		<ui:include src="menu.xhtml" />
+	</aside>
+
 	<footer>
-	    <p:column styleClass="centered">
-		    <p:graphicImage library="images" name="dsw_footer.png" position="bottom" styleClass="centered" />
+		<p:column styleClass="centered">
+			<p:graphicImage library="images" name="dsw_footer.png"
+				position="bottom" styleClass="centered" />
 		</p:column>
 	</footer>
-	
+	<section class="aw-content  js-content">
+		<ui:insert name="corpo" />
+	</section>
+
 	<h:form>
 		<p:confirmDialog global="true">
-			<p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no"
-				icon="ui-icon-close" />
-				
-			<p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes"
-				icon="ui-icon-check" />
+			<p:commandButton value="Não" type="button"
+				styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+
+			<p:commandButton value="Sim" type="button"
+				styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
 		</p:confirmDialog>
 	</h:form>
 

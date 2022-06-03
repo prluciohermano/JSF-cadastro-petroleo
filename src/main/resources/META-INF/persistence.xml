@@ -7,17 +7,18 @@
 		<class>br.com.adsdswpetro.model.Petroleo</class>
 
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/petroleo?useTimezone=true; serverTimezone=UTC" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/petroleira?useTimezone=true; serverTimezone=UTC" />
 			<property name="javax.persistence.jdbc.user" value="postgres" />
 			<property name="javax.persistence.jdbc.password" value="0000" />
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-			 			
+			 			  
 			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
       		<property name="javax.persistence.schema-generation.create-source" value="metadata" />
       		<property name="javax.persistence.sql-load-script-source" value="META-INF/sql/recheia_banco.sql"/>
       		
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.format_sql" value="true" />
+			
 		</properties>
 
 	</persistence-unit>
