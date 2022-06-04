@@ -5,7 +5,6 @@
 	<groupId>br.com.adsdswpetro</groupId>
 	<artifactId>JSF-cadastro-petroleo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 
 	<dependencies>
 

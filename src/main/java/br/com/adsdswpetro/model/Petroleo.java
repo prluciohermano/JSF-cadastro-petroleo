@@ -37,6 +37,7 @@ public class Petroleo implements Serializable {
 	private String razaoSocial;
 
 	@NotEmpty
+	@CNPJ
 	@Column(nullable = false, length = 18)
 	private String cnpj;
 	

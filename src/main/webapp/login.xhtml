@@ -18,8 +18,11 @@
 	<h:graphicImage class="image-background" library="images" name="fundo-login.png" />
 	<div class="caixa">
 	<div class="d-flex flex-column card">
-		<h1>Faça seu Login</h1>
+		<h1>Área Restrita</h1>
 		<br/>
+		<div class="centered2">
+		<h4>Login</h4>
+		</div>
 		<div class="d-flex flex-colum">
 			<form role="form" method="post"
 				action="${request.contextPath}/j_spring_security_check">
@@ -35,7 +38,7 @@
 				</div>
 				<br/>
 				<div class="d-flex flex-column">
-					<button type="submit">Login</button>
+					<button class="btn btn-outline-primary" type="submit">Acessar Sistema</button>
 				</div>
 			</form>
 			</div>
