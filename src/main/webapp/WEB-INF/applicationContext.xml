@@ -6,40 +6,29 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
+	 
      <http pattern="/javax.faces.resource/**" security="none" />
-     <http pattern="/error.xhtml" security="none" />
-
-     <!-- Para carregar a aplicação no browser:
-          http://localhost:8080/JSF-orcamento/
-          ou
-          http://localhost:8080/JSF-orcamento/spring_security_login
-      -->
-
-     <!-- <http pattern="/login.xhtml" security="none" /> -->
+     <http pattern="/login.xhtml" security="none" />
 
      <http auto-config="true" use-expressions="true">
-           <intercept-url pattern="/index.xhtml" access="isAuthenticated()" />
+     	   <intercept-url pattern="/index.xhtml" access="isAuthenticated()" />     	     	       	   
            <intercept-url pattern="/configuracoes.xhtml" access="hasAnyRole('ADMINISTRADORES')" />
            <intercept-url pattern="/relatorio.xhtml" access="isAuthenticated()" />
+           <intercept-url pattern="/logout.xhtml" access="permitAll" />
            <intercept-url pattern="/**" access="denyAll" />
            <access-denied-handler error-page="/error.xhtml" />
-           <form-login default-target-url="/index.xhtml" always-use-default-target="true" />
-           
-           <!-- 
-               <form-login login-page="/login.xhtml"
+           <form-login login-page="/login.xhtml"
                            authentication-failure-url="/login.xhtml/invalid=true"
-                           default-target-url="/"
+                           default-target-url="/index.xhtml"
                            always-use-default-target="true" />
-               <logout logout-url="/JSF-cadastro-empresas/logout" 
-                       invalidate-session="true" />
-           -->
-     </http>
-
+            <logout logout-url="/j_spring_security_logout" invalidate-session="true" />
+            </http>
+ 
      <authentication-manager>
         <authentication-provider>
            <user-service>
               <user name="admin" password="2201" authorities="ADMINISTRADORES" />
-              <user name="lucio" password="2201" authorities="VENDEDORES" />
+              <user name="lucio" password="2201" authorities="VENDEDOR" />
            </user-service>
         </authentication-provider>
      </authentication-manager>

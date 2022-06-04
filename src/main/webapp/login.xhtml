@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<f:facet name="first">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</f:facet>
+	<h:outputStylesheet library="webjars" name="bootstrap/5.1.2/css/bootstrap.min.css" />
+	<h:outputStylesheet library="css" name="estilo.css" />
+	<h:outputScript target="body" library="primefaces" name="jquery/jquery.js" />
+	<h:outputScript target="body" library="js" name="app.js" />
+</h:head>
+<h:body>
+	<h:graphicImage class="image-background" library="images" name="fundo-login.png" />
+	<div class="caixa">
+	<div class="d-flex flex-column card">
+		<h1>Faça seu Login</h1>
+		<br/>
+		<div class="d-flex flex-colum">
+			<form role="form" method="post"
+				action="${request.contextPath}/j_spring_security_check">
+
+				<div class="d-flex flex-column">
+					<label for="j_username">Usuário:</label> <input type="text"
+						name='j_username' id="j_username" placeholder="Digite o usuário" />
+				</div>
+				<br/>
+				<div class="d-flex flex-column">
+					<label for="j_password">Senha:</label> <input type="password"
+						name='j_password' id="j_password" placeholder="Digite a senha" />
+				</div>
+				<br/>
+				<div class="d-flex flex-column">
+					<button type="submit">Login</button>
+				</div>
+			</form>
+			</div>
+		</div>
+	</div>
+</h:body>
+</html>
